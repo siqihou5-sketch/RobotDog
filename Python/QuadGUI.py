@@ -11,6 +11,10 @@ import ikpy.inverse_kinematics as ik
 import numpy as np
 import math
 
+# Compatibility with NumPy 1.24+ used by the legacy IKPy API.
+if not hasattr(np, "float"):
+    np.float = float
+
 from pyforms.basewidget import BaseWidget
 from pyforms.controls import ControlText
 from pyforms.controls import ControlButton
